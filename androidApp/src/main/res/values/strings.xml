@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Alpha Movie</string>
+    <string name="home_route">home route</string>
+    <string name="explore_route">explore route</string>
+    <string name="playlist_route">playlist route</string>
+</resources>

@@ -1,4 +1,4 @@
-package com.alphadevdigital.movieapp.android
+package com.alphadevdigital.movieapp.android.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,7 +23,8 @@ fun MyApplicationTheme(
     val colors = if (darkTheme) {
         darkColors(
             primary = Color(0xFFBB86FC),
-            primaryVariant = Color(0xFF3700B3),
+            primaryVariant = mainDark,
+            secondaryVariant = secondaryDark,
             secondary = Color(0xFF03DAC5)
         )
     } else {
@@ -33,13 +34,7 @@ fun MyApplicationTheme(
             secondary = Color(0xFF03DAC5)
         )
     }
-    val typography = Typography(
-        body1 = TextStyle(
-            fontFamily = FontFamily.Default,
-            fontWeight = FontWeight.Normal,
-            fontSize = 16.sp
-        )
-    )
+
     val shapes = Shapes(
         small = RoundedCornerShape(4.dp),
         medium = RoundedCornerShape(4.dp),
