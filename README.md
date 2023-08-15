@@ -3,7 +3,7 @@ This app is designed to provide an immersive movie-watching experience while sho
 
 Android                                                               |  iOS 
 :--------------------------------------------------------------------:|:-------------------------------------------------------------:
-<img src="screenshots/moviapp_android.gif" alt="Android" width="300" />  |  <img src="screenshots/moviapp_ios.gif" alt="iOS" width="300" />
+<img src="screenshots/movieapp_android.gif" alt="Android" width="300" />  |  <img src="screenshots/moveiapp_ios.gif" alt="iOS" width="300" />
 
 Features
 Cross-Platform: Utilizes the Kotlin Multiplatform framework to share core logic and data models between Android and iOS platforms, reducing duplication and improving development efficiency.
