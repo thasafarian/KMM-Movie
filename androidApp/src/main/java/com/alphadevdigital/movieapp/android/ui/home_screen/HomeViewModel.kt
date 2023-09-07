@@ -17,6 +17,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor() : ViewModel(), KoinComponent {
 
     private val getMoviesUseCase by inject<MovieUseCase>()
+
     var nowPlayingUIState by mutableStateOf(NowPlayingUIState())
     var popularUIState by mutableStateOf(PopularUIState())
     var topRatedUIState by mutableStateOf(TopRatedUIState())
@@ -31,6 +32,12 @@ class HomeViewModel @Inject constructor() : ViewModel(), KoinComponent {
         const val NOW_PLAYING = "now_playing"
         const val POPULAR = "popular"
         const val TOP_RATED = "top_rated"
+    }
+
+    init {
+        getMovies(movieType = NOW_PLAYING, forceUpdate = true)
+        getMovies(movieType = POPULAR, forceUpdate = true)
+        getMovies(movieType = TOP_RATED, forceUpdate = true)
     }
 
     fun getMovies(movieType: String = NOW_PLAYING, forceUpdate: Boolean = false) {

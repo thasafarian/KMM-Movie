@@ -135,7 +135,7 @@ fun ExploreScreen(
         ) {
             if (viewModel.uiState.movies.isNotEmpty()) {
                 items(count = filteredList.size) { index ->
-                    MovieRowItem(
+                    ExploreMovieItem(
                         mainViewModel = mainViewModel,
                         navController = navController,
                         movie = filteredList[index],
@@ -167,7 +167,7 @@ fun ExploreScreen(
 }
 
 @Composable
-fun MovieRowItem(
+fun ExploreMovieItem(
     mainViewModel: MainViewModel,
     navController: NavController,
     movie: Movie

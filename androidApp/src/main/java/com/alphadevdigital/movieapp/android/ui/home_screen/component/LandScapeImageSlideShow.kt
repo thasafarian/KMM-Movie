@@ -15,6 +15,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.alphadevdigital.movieapp.android.ui.component.CaptionBox
@@ -28,17 +29,20 @@ import kotlinx.coroutines.delay
 fun LandScapeImageSlideShow(
     images: List<Movie>,
 ) {
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState { images.size }
     val currentIndex = pagerState.currentPage
     Box(
         modifier = Modifier.background(secondaryDark),
         contentAlignment = Alignment.BottomCenter
     ) {
-        HorizontalPager(
-            pageCount = images.size,
-            state = pagerState,
-            contentPadding = PaddingValues(end = 40.dp),
 
+        val imageWidth = (LocalConfiguration.current.screenWidthDp * 70/100).dp
+        val imageHeight = imageWidth * 60/100
+        val endOffset = imageWidth * 25/100
+
+        HorizontalPager(
+            state = pagerState,
+            contentPadding = PaddingValues(end = endOffset),
             ) { page ->
 
             Card(
@@ -47,8 +51,8 @@ fun LandScapeImageSlideShow(
             ) {
                 AsyncImage(
                     modifier = Modifier
-                        .width(400.dp)
-                        .height(170.dp),
+                        .width(imageWidth)
+                        .height(imageHeight),
                     contentScale = ContentScale.FillBounds,
                     model = images[page].landscapeImageUrl,
                     contentDescription = null

@@ -95,6 +95,7 @@ class MainActivity : ComponentActivity() {
                         composable(route = Screen.PlaylistRoute.route) {
                             PlaylistScreen(navController = navController)
                         }
+
                         composable(
                             route = Screen.DetailRoute.route,
                         ) {
